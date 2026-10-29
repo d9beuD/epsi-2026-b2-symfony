@@ -1,4 +1,4 @@
-name: project-name
+name: epsi-2026-b2-symfony
 
 services:
   ###> doctrine/doctrine-bundle ###
