@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artist index{% endblock %}
+
+{% block body %}
+    <div class="row my-5">
+        <div class="col">
+            <h1>Artists ({{ artists|length }})</h1>
+        </div>
+        <div class="col-auto">
+            <a class="btn-subtle theme-primary" href="{{ path('app_artist_new') }}">Nouveau</a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for artist in artists %}
+            <div class="sm:col-6 md:col-4 lg:col-3">
+                <div class="card">
+                    <div class="ratio-1x1">
+                        <img src="{{ artist.thumbnail }}" alt="Illustration de l'artiste" class="card-img-top object-fit-cover">
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artist.name }}</h5>
+                        <a href="{{ path('app_artist_show', { id: artist.id }) }}" class="card-link">Voir</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

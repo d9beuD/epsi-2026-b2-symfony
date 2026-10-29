@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ artist.name }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="sm:col-4 md:col-3">
+            <img src="{{ artist.thumbnail }}" alt="Illustration de l'artiste" class="img-fluid rounded mb-3">
+
+            <div class="d-flex flex-column gap-2">
+                <a href="{{ path('app_artist_release_new', { id: artist.id }) }}" class="btn-subtle theme-primary">Nouvelle release</a>
+                <a class="btn-subtle w-100" href="{{ path('app_artist_edit', {'id': artist.id}) }}">edit</a>
+                <a class="btn-subtle w-100" href="{{ path('app_artist_index') }}">back to list</a>
+                {{ include('artist/_delete_form.html.twig') }}
+            </div>
+        </div>
+        <div class="col-auto">
+            <h1>{{ artist.name }}</h1>
+        </div>
+    </div>
+{% endblock %}
