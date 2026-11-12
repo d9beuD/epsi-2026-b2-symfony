@@ -49,6 +49,7 @@ final class ReleaseController extends AbstractController
     {
         return $this->render('release/show.html.twig', [
             'release' => $release,
+            'artist' => $release->getArtist(),
         ]);
     }
 

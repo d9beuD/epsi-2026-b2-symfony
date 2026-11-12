@@ -1,7 +1,26 @@
 {% extends 'artist/base.html.twig' %}
 
-{% block title %}{{ artist.name }}{% endblock %}
+{% block title %}Liste des releases de {{ artist.name }}{% endblock %}
 
 {% block content %}
-test
+    <h2>Liste des releases</h2>
+    <div class="row">
+        {% for release in artist.releases %}
+            <div class="col md:col-6 lg:col-4 xl:col-3">
+                <div class="card">
+                    <img src="{{ release.thumbnail }}" alt="Illustration d'album" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            {{  release.title }}
+                        </h4>
+                        <p>{{ release.releasedAt | date('d/m/Y') }}</p>
+                        <a href="{{ path('app_release_show', { id: release.id }) }}" class="btn-subtle theme-primary">
+                            Voir
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

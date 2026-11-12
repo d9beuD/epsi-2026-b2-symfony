@@ -22,7 +22,10 @@
 
                     <div class="card-body">
                         <h5 class="card-title">{{ artist.name }}</h5>
-                        <a href="{{ path('app_artist_show', { id: artist.id }) }}" class="card-link">Voir</a>
+                        <a href="{{ path('app_artist_show', { id: artist.id }) }}" class="btn-subtle theme-primary">
+                            Voir
+                            <i data-lucide="arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
