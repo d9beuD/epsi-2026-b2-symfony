@@ -1,4 +1,7 @@
 {{ form_start(form) }}
+    <div class="d-none">
+        {{ form_row(form.artist) }}
+    </div>
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

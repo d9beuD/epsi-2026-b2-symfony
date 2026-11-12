@@ -38,6 +38,7 @@ final class ReleaseController extends AbstractController
         }
 
         return $this->render('release/new.html.twig', [
+            'artist' => $artist,
             'release' => $release,
             'form' => $form,
         ]);

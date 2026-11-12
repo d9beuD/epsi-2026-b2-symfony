@@ -20,7 +20,7 @@
         {% for release in releases %}
             <tr>
                 <td>{{ release.id }}</td>
-                <td>{{ release.type }}</td>
+                <td>{{ release.type.value }}</td>
                 <td>{{ release.title }}</td>
                 <td>{{ release.releasedAt ? release.releasedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ release.thumbnail }}</td>
